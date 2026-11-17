@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   2K MAKER – Studio Freight Editorial Layout & Original Brand Palette
+   Brand Colors:
+   - Primary Blue: #0A42A1
+   - White:        #FFFFFF
+   - Dark Blue:    #223176
+   - Light Blue:   #6FA8FF
+   - Tint Blue:    #EEF4FF / #D9E8FF
+   ============================================================ */
+
+:root {
+  --primary-blue: #0A42A1;
+  --dark-blue: #223176;
+  --light-blue: #6FA8FF;
+  --tint-blue: #EEF4FF;
+  --border-blue: #D9E8FF;
+  --white: #FFFFFF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto; /* Lenis handles smooth inertia scroll */
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #FFFFFF;
+    color: #223176;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #FFFFFF;
+    color: #223176;
+  }
+
+  ::selection {
+    background: #D9E8FF;
+    color: #0A42A1;
+  }
+}
+
+/* ============================================================
+   STUDIO FREIGHT EDITORIAL TYPOGRAPHY (Using Brand Colors)
+   ============================================================ */
+.heading-display {
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.heading-xl {
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.96;
+}
+
+.heading-lg {
+  font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.text-label {
+  font-size: 0.6875rem; /* 11px */
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0A42A1;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ============================================================
+   GRADIENTS (Original Strict Brand Palette)
+   ============================================================ */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #223176 0%, #0A42A1 100%);
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, #0A42A1 0%, #6FA8FF 100%);
+}
+
+.bg-gradient-light {
+  background: linear-gradient(180deg, #FFFFFF 0%, #EEF4FF 100%);
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, #223176 0%, #0A42A1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-brand {
+  background: linear-gradient(135deg, #0A42A1 0%, #6FA8FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   BUTTONS (Original Brand Style)
+   ============================================================ */
+.btn-primary {
+  background-color: #0A42A1;
+  color: #FFFFFF;
+  transition: all 0.25s cubic-bezier(0.76, 0, 0.24, 1);
+  box-shadow: 0 4px 14px 0 rgba(10, 66, 161, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: #083582;
+  box-shadow: 0 6px 20px 0 rgba(10, 66, 161, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: #223176;
+  border: 1.5px solid #D9E8FF;
+  transition: all 0.25s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn-secondary:hover {
+  border-color: #0A42A1;
+  color: #0A42A1;
+  background-color: #EEF4FF;
+}
+
+/* ============================================================
+   SCROLL REVEAL (Safe & Always Visible)
+   ============================================================ */
+.reveal-hidden,
+.reveal-left,
+.reveal-right {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-hidden.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+
+/* ============================================================
+   STUDIO FREIGHT MARQUEE TICKER
+   ============================================================ */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   SECTION HAIRLINE DIVIDERS
+   ============================================================ */
+.section-line {
+  width: 100%;
+  height: 1px;
+  background-color: #D9E8FF;
+}
+
+/* ============================================================
+   EDITORIAL CARD STYLING
+   ============================================================ */
+.card-sf {
+  background-color: #FFFFFF;
+  border: 1px solid #D9E8FF;
+  border-radius: 1.5rem;
+  transition: all 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.card-sf:hover {
+  border-color: #0A42A1;
+  box-shadow: 0 16px 36px -8px rgba(10, 66, 161, 0.12), 0 4px 12px rgba(34, 49, 118, 0.04);
+  transform: translateY(-4px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FFFFFF; }
+::-webkit-scrollbar-thumb { background: #D9E8FF; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0A42A1; }
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }

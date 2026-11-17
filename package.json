@@ -1,0 +1,12 @@
+{
+  "name": "2k-maker-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cd server && npm start",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "seed": "cd server && npm run seed",
+    "build:client": "cd client && npm run build"
+  }
+}
